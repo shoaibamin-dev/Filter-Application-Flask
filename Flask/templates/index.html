@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Artwork project</title>
+    <style type="text/css">
+        body{
+            font-family: helvetica;
+        }
+        #flex-container{
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+        }
+        .flex-item{
+            
+            width: 75vw;
+            background-color: #eee;
+            
+        }
+        form div{
+             
+            margin: 20px;
+        }
+        div label{
+            float: left;
+            width:  13em;
+            font-weight: bolder;
+        }
+        #submit{
+            margin-left: auto;
+            margin-right: auto;
+             
+            font-weight: bolder;
+        }
+        textarea, input{
+             width:calc(100% - 17em);;
+
+        }
+        #submit{
+            width:calc(52% - 2em);;
+             
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <nav></nav>
+        <header></header>
+        <section>
+            
+            <div id="flex-container">
+
+                <div class="flex-item">
+                    <h1 style="text-align: center; font-size: 48px;">Set a range of author's birth year and the city</h1> 
+                    <form method="post"   action="process">
+                        <div  > 
+                            <label for="start_year"> Start year: </label>
+                            <input name="start_year" id="start_year"  required>
+                        </div>
+                        
+                        <div> 
+                            <label for="end_year">End year </label>
+                            <input name="end_year" id="end_year"  size="100%" required>
+                        </div>
+                        <div >
+                        
+                           
+                        <label for="select_city">Artwork city</label>
+                        <div  >
+                            <select id="select_city"    name="select_city">
+                                <option value="Torino">Torino</option>
+                                <option value="Milano">Milano</option>
+                                <option value="Roma">Roma</option>
+                                <option value="Napoli">Napoli</option>
+                            </select>
+                        </div>
+                            
+                             
+                        </div>
+                    <div style="text-align: center;">
+                        <input id="submit" type="submit" value="Send"  >
+                        <input id="submit" type="reset"  value="Cancel"  >
+                    </div>
+                    
+                    </form>
+                </div>
+                 
+            </div>
+        </section>
+        <footer></footer>
+    </article>
+     
+</body>
+</html>

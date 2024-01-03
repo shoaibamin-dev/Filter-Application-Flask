@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Artwork project</title>
+    <style type="text/css">
+        body{
+            font-family: helvetica;
+        }
+        #flex-container{
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+        }
+        .flex-item{
+            
+            width: 75vw;
+            background-color: #eee;
+            
+        }
+        form div{
+             
+            margin: 20px;
+        }
+        div label{
+            float: left;
+            width:  13em;
+            font-weight: bolder;
+        }
+        #submit{
+            margin-left: auto;
+            margin-right: auto;
+             
+            font-weight: bolder;
+        }
+        textarea, input{
+             width:calc(100% - 17em);;
+
+        }
+        #submit{
+            width:calc(52% - 2em);;
+             
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <nav></nav>
+        <header></header>
+        <section>
+            
+            <div id="flex-container">
+
+                <div class="flex-item">
+                    <h1 style="text-align: center; font-size: 24px;">
+                        Artworks in {{select_city}} of authors born between {{start_year}} and {{end_year}}
+                    </h1> 
+                    <table width="100%" border="1" style="text-align: center;">
+                        <tr>
+                            <th>Author</th>
+                            <th>Arwork</th>
+                            <th>Category</th>
+                        </tr>
+                        {% for artwork in artworks %}  
+                            {% if artwork[2]   == 'architecture' %}
+                                {% set color = 'Blue'%}
+                            {% elif artwork[2] == 'painting' %}  
+                                {% set color = 'Orange'%}
+                            {% elif artwork[2] == 'sculpture' %}  
+                                {% set color = 'Green'%} 
+                            {% else   %}  
+                                {% set color = 'Yellow'%}
+                            {% endif %}
+                            <tr  bgcolor={{color}}>                           
+                                <td>{{artwork[0]}}</td>         
+                                <td>{{artwork[1]}}</td>   
+                                <td>{{artwork[2]}}</td>        
+                            </tr>
+                        {% endfor %}
+
+
+                    </table>
+                    <p>...</p>
+                </div>
+                 
+            </div>
+        </section>
+        <footer></footer>
+    </article>
+     
+</body>
+</html>
